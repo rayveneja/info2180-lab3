@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sq = document.querySelectorAll('#board > div');
     let currentPlayer = 'X';
-    
+
     sq.forEach(function (square) {
         square.classList.add('square');
+        
         // question 2
-
         square.addEventListener('click', function(){
             if(!square.classList.contains('X') && !square.classList.contains('O')){
                 square.classList.add(currentPlayer);
@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-
+        square,addEventListener('mouseenter', function(){
+            square.classList.add('hover');
+        });
+        square.addEventListener('mouseenter', function(){
+            square.classList.remove('hover');
+        });
     });
 });
